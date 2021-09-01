@@ -38,20 +38,20 @@ for submission_dict in submission_dicts:
 '''
 
 # Generowanie list do wykresów
-titles, num_comments, discn_links = [],[],[]
+titles, num_comments, disc_links = [],[],[]
 
 for submission_dict in submission_dicts:
     title = submission_dict['title']                        # tytuł
-    hn_link = submission_dict['hn_link']                    # łącze do dyskusji
-    disc_link = f"<a href='{hn_link}'>{title[:15]}</a>"     # liczba komentarzy
+    hn_link = submission_dict['hn_link']                    # łącze 
+    disc_link = f"<a href='{hn_link}'>{title[:15]}</a>"     # łącze do dyskusji
 
     titles.append(title)
     num_comments.append(submission_dict['comments'])
-    discn_links.append(disc_link)
+    disc_links.append(disc_link)
 
 data =[{
     'type': 'bar',
-    'x': discn_links,
+    'x': disc_links,
     'y': num_comments,
     'hovertext': titles,
     'marker': {
