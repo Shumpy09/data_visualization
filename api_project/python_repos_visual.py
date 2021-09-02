@@ -13,6 +13,7 @@ print(f"Kod stanu: {r.status_code}")
 # Przetworzenie wyników
 response_dict = r.json()
 repo_dicts = response_dict['items']
+
 repo_links, stars, labels = [], [], []
 for repo_dict in repo_dicts:
     repo_name = repo_dict['name']
